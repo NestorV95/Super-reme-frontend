@@ -9,13 +9,14 @@ import React from "react";
 //   useParams
 // } from "react-router-dom";
 
-
+import LogoCdt from "./Logo.js"
 import HomeNav from "./HomeNav.js"
 
 const Home = () => {
   return(
       <div>
         <h1>Home Page</h1>  
+        <LogoCdt />
         {/* render a log and current date time*/}
         {/* render a navigation vertically and center of page*/}
         <HomeNav />

@@ -1,4 +1,6 @@
 import React,{useState, useEffect} from 'react'
+import BottomNav from './BottomNav.js'
+import {LogoCdt} from './Logo.js'
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -10,11 +12,25 @@ import React,{useState, useEffect} from 'react'
 
 const Shop=()=>{
 
+    // useEffect(()=>{
+    //     fetchItems()
+    // })
+
+    // const [items,setItems] = useState([]);
+
+    // const fetchItems = async () =>{
+    //     const request = await fetch('http/localhost:3000/api/v1/items')
+    //     const response = await request.json()
+    //     console.log(response)
+    // }
+
+
     return(
         <div>
             <h1>Shop Page</h1>
             {/* render logo with current date time */}
             {/* logo leads to home */}
+            <LogoCdt />
             {/* interpolate through fetch  and render each item*/}
             {/* for each product render a card */}
             {/* card links to /shop/item*/}
@@ -41,6 +57,7 @@ const Shop=()=>{
                 {/* shop/checkout renders billing/shipping & payment forms */}
                 {/* cancel button(leads to /shop), process payment button(leads to shop/confirmation) */}
                 {/* navbar at bottom */}
+                <BottomNav/>
         </div>
     )
 }

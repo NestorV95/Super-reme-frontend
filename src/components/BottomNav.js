@@ -1,20 +1,13 @@
 import React from "react";
-import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-  Link,
-//   useRouteMatch,
-//   useParams
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const HomeNav=()=>{
+const BottomNav=()=>{
     return(
-         <div className="home-nav">
+         <div className="bottom-nav">
              <nav>
                 <ul>
-                    <li>
-                    <Link to="/news">News</Link>
+               <li>
+                   <Link to="/news">News</Link>
                </li>
                <li>
                    <Link to="/previews">Line Up Preview</Link>
@@ -40,7 +33,7 @@ const HomeNav=()=>{
                <li>
                    <Link to="/mailinglist">Mailing List</Link>
                </li>
-           </ul>
+           </ul> 
              </nav>
            
          </div>
@@ -48,4 +41,4 @@ const HomeNav=()=>{
   }
 
 
-export default HomeNav
+export default BottomNav
