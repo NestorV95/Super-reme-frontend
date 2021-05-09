@@ -9,6 +9,35 @@ import LogoCdt from "./Logo";
 //   useRouteMatch,
 //   useParams
 // } from "react-router-dom";
+const NewsImages=()=>{
+    return(
+        <div className="nic-div">
+            <div>
+                <p>need an array of images </p>
+                <image src="" alt=""/>  
+            </div>
+            <div className="nrc-div">
+                {/*  arrow radios to navigate the array of images */}
+                {/* # of # to keep track of image # */}
+                <ul>
+                    <li>{"<<<"}</li>
+                    <li>{"# of #"}</li>
+                    <li>{">>>"}</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+const NewsContent=()=>{
+    return(
+        <div>
+                <p>publish date</p>
+                <p>news title</p>
+                <p>news content</p>
+        </div>
+    )
+}
 
 const News=()=>{
     return(
@@ -19,6 +48,8 @@ const News=()=>{
             {/* logo leads to home */}
             {/* render news image */}
             {/* render # of # slide show buttons below image*/}
+            <NewsImages/>
+            <NewsContent/>
             {/* render news content */}
             {/* render a navigation bar at bottom of page */}
             <BottomNav/>

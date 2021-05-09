@@ -1,14 +1,6 @@
 import React from "react";
 import BottomNav from "./BottomNav";
 import LogoCdt from "./Logo";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useRouteMatch,
-//   useParams
-// } from "react-router-dom";
 
 const About=()=>{
     return(
@@ -18,6 +10,11 @@ const About=()=>{
                 {/*  logo leads to home*/}
                 <LogoCdt />
                 {/* render about story */}
+                <div>
+                    <p>insert parody story about super-reme</p>
+                    
+                </div>
+                
                 {/* render a navigation bar at bottom of page*/}
                 <BottomNav/>
         </div>

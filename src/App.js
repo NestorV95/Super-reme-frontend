@@ -1,13 +1,11 @@
 
 import React from "react";
+import "./App.css"
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  // Link,
-  // useRouteMatch,
-  // useParams
 } from "react-router-dom";
 
 import Home from "./components/Home.js"
@@ -22,8 +20,9 @@ import Contact from "./components/Contact.js"
 import MailingList from "./components/MailingList.js"
 
 const App = () => {
+  
   return(
-    <div className="app">
+    <div className="App">
       <Router>
         <Switch >
           <Route path="/news" component={News}/>

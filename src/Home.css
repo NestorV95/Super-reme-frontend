@@ -1,0 +1,58 @@
+.home{
+    background: url("./images/car-boi.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.home-content{
+    margin: 0;
+    border: 1px solid white;
+    width:100%;
+}
+
+
+.home-logo{
+    display: table;
+    margin-top: 20rem;
+    margin-bottom: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+    border: 0.10rem solid  white; 
+}
+
+.home-menu{
+    display: table;
+    margin: 0 auto;
+    border: 0.10rem solid  white;
+}
+
+.hn-ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 2px solid white
+}
+
+.hn-li{
+    margin: 1rem;
+    background-color: transparent;
+}
+
+
+.hn-a{
+    display: block;
+    color:white;
+    background-color: transparent;
+    text-decoration: none
+}
+
+.hn-a:hover{
+    background-color: red;
+}
+
+.home-social{
+    display: table;
+    margin: 0 auto;
+    border: 0.10rem solid  white;
+}
+
