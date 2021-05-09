@@ -6,11 +6,11 @@ const SignIn=()=>{
             <form>
                 <div className="si-username">
                     <label>Username</label>
-                    <input type="text"/>
+                    <input type="text" placeholder="username" />
                 </div>
                 <div className="si-password">
                     <label>Password</label>
-                    <input type="password"/> 
+                    <input type="password" placeholder="password"/> 
                 </div>
                 <div className="si-button">
                     <button>Sign In</button>  
