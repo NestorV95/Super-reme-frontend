@@ -4,15 +4,13 @@ import LogoCdt from "./Logo";
 
 const About=()=>{
     return(
-        <div>
+        <div className="about-content">
             <h1>About Page</h1>
-                {/* render a logo and current date time*/}
-                {/*  logo leads to home*/}
-                <LogoCdt />
-                {/* render about story */}
-                <div>
+                <div className="about-logo">
+                    <LogoCdt />
+                </div>
+                <div className="about-story">
                     <p>insert parody story about super-reme</p>
-                    
                 </div>
                 
                 {/* render a navigation bar at bottom of page*/}
