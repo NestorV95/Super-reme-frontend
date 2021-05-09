@@ -2,7 +2,7 @@ import React from "react";
 
 const SignIn=()=>{
     return(
-        <div className="SignIn-content">
+        <div className="si-content">
             <form>
                 <div className="si-username">
                     <label>Username</label>
