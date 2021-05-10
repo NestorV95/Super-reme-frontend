@@ -1,4 +1,4 @@
-import React from 'react' //,{useState, useEffect}
+import React,{useState, useEffect} from 'react'
 import BottomNav from './BottomNav.js'
 import {LogoCdt} from './Logo.js'
 // import {
@@ -10,20 +10,37 @@ import {LogoCdt} from './Logo.js'
 //   useParams
 // } from "react-router-dom";
 
-const Shop=()=>{
+// const useFetch=(url)=>{
+//     const [status, setStatus] = useState('idle')
+//     const [data,setData] = useState([]);
 
-    // useEffect(()=>{
-    //     fetchItems()
-    // })
+//     useEffect(()=>{
+//         if (!url) return;
+//         const fetchData = async () =>{
+//             setStatus('fetching')
+//             const res = await fetch(url)
+//             const data = await res.json()
+//             setData(data)
+//             setStatus('fetched')
+//     }
 
-    // const [items,setItems] = useState([]);
+//         fetchData();
+//     }, [url]);
 
-    // const fetchItems = async () =>{
-    //     const request = await fetch('http/localhost:3000/api/v1/items')
-    //     const response = await request.json()
-    //     console.log(response)
-    // }
+//     return {status,data}
+// }
 
+const Shop=(query)=>{
+    const [products, setProducts] = useState([])
+
+    useEffect(
+        fetch('http//localhost:3001/products')
+        .then(res=>res.json)
+        .then(data=>{
+            console.log(data)
+         })
+    )
+   
 
     return(
         <div>

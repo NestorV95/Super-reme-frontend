@@ -13,7 +13,6 @@ const About=()=>{
                     <p>insert parody story about super-reme</p>
                 </div>
                 
-                {/* render a navigation bar at bottom of page*/}
                 <BottomNav/>
         </div>
     )
