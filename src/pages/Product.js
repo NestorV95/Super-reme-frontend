@@ -1,11 +1,13 @@
-import React,{useState, useEffect} from 'react'
+//----------------------------------------- packages ---------------------------------------------//
+import React from 'react' //,{useState, useEffect}
 import { useParams } from 'react-router'
+//---------------------------------------- components --------------------------------------------//
+import BottomNav from '../components/BottomNav'
+import LogoCdt from '../components/Logo'
+import useFetch from '../helpers/useFetch'
+//------------------------------------------ styles ----------------------------------------------//
 
-import BottomNav from './BottomNav'
-import LogoCdt from './Logo'
-import useFetch from './useFetch'
-
-
+//---------------------------------------- product page ------------------------------------------//
 const Product = () => {
     const {id} = useParams()
     const {data:product, isPending, error} = useFetch(`http://localhost:3001/products/${id}`)
@@ -17,7 +19,6 @@ const Product = () => {
             </div>
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
-
             <div className="product-cart">
                 {/* conditonally renders cart etc. */}
             </div>
@@ -34,17 +35,15 @@ const Product = () => {
         </div>
     )
 }
-
+//------------------------------------- product components ---------------------------------------//
 const ProductCard = ({product})=>{
     let {image, name, description, price} = product
     return(  
     <div className="product-card">
         <div className="product-image">
-            {/* renders image of item */}
             <img src={image} alt={name}></img>
         </div>
         <div className="product-details">
-            {/* renders item name, description, price*/}
             <p>{name}</p>
             <p>{description}</p>
             <p>{price}</p> 

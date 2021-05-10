@@ -1,15 +1,11 @@
+//----------------------------------------- packages ---------------------------------------------//
 import React from "react";
-import BottomNav from "./BottomNav";
-import LogoCdt from "./Logo";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useRouteMatch,
-//   useParams
-// } from "react-router-dom";
+//---------------------------------------- components --------------------------------------------//
+import BottomNav from "../components/BottomNav";
+import LogoCdt from "../components/Logo";
+//----------------------------------------- styles -----------------------------------------------//
 
+//--------------------------------------- previews page ------------------------------------------//
 const Previews =()=>{
     return(
         <div>
@@ -30,5 +26,5 @@ const Previews =()=>{
         </div>
     )
 }
-
+//------------------------------------ previews components ---------------------------------------//
 export default Previews 

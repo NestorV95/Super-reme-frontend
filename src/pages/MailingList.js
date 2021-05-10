@@ -1,15 +1,22 @@
+//----------------------------------------- packages ---------------------------------------------//
 import React from "react";
-import BottomNav from "./BottomNav";
-import LogoCdt from "./Logo";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useRouteMatch,
-//   useParams
-// } from "react-router-dom";
+//---------------------------------------- components --------------------------------------------//
+import BottomNav from "../components/BottomNav";
+import LogoCdt from "../components/Logo";
+//----------------------------------------- styles -----------------------------------------------//
 
+//------------------------------------- Mailing List page ----------------------------------------//
+const MailingList=()=>{
+    return(
+        <div>
+            <h1>MailingList Page</h1>
+            <LogoCdt/>
+            <MailingListForm/>
+            <BottomNav/>
+        </div>
+    )
+}
+//---------------------------------- Mailing List Components -------------------------------------//
 const MailingListForm=()=>{
     return(
         <div className="mlf-div">
@@ -46,22 +53,6 @@ const MailingListForm=()=>{
                     <button>unsubscribe</button>
                 </div>
             </div>
-        </div>
-    )
-}
-
-const MailingList=()=>{
-    return(
-        <div>
-            <h1>MailingList Page</h1>
-            {/* render a log and current date time*/}
-            {/* logo leads to home */}
-            <LogoCdt/>
-            {/* mailing list form */}
-            <MailingListForm/>
-            {/* subscribe button  & unsubscribe buttons*/}
-            {/* render a navigation bar at bottom of page */}
-            <BottomNav/>
         </div>
     )
 }

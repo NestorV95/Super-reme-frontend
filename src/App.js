@@ -1,29 +1,28 @@
-
+//----------------------------------------- packages ---------------------------------------------//
 import React from "react";
+import {BrowserRouter as Router,Switch,Route,} from "react-router-dom";
+//---------------------------------------- components --------------------------------------------//
+
+//------------------------------------------ pages -----------------------------------------------//
+import Home from "./pages/Home.js"
+import News from "./pages/News.js"
+import Previews from "./pages/Previews.js"
+import LookBooks from "./pages/LookBooks.js";
+import Shop from "./pages/Shop.js"
+import Product from "./pages/Product.js"
+import Random from "./pages/Random.js"
+import About from "./pages/About.js"
+import Stores from "./pages/Stores.js"
+import Contact from "./pages/Contact.js"
+import MailingList from "./pages/MailingList.js"
+//----------------------------------------- styles -----------------------------------------------//
 import "./App.css"
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-
-import Home from "./components/Home.js"
-import News from "./components/News.js"
-import Previews from "./components/Previews.js"
-import LookBooks from "./components/LookBooks.js";
-import Shop from "./components/Shop.js"
-import Product from "./components/Product.js"
-import Random from "./components/Random.js"
-import About from "./components/About.js"
-import Stores from "./components/Stores.js"
-import Contact from "./components/Contact.js"
-import MailingList from "./components/MailingList.js"
-
+//--------------------------------------- application --------------------------------------------//
 const App = () => {
-  
+
   return(
     <div className="App">
+{/*------------------------------------- client routes ------------------------------------------*/}
       <Router>
         <Switch >
           <Route path="/news" component={News}/>
@@ -42,8 +41,5 @@ const App = () => {
     </div>
   );
 }
-
-
-
 
 export default App;
