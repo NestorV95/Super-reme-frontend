@@ -13,6 +13,7 @@ import News from "./components/News.js"
 import Previews from "./components/Previews.js"
 import LookBooks from "./components/LookBooks.js";
 import Shop from "./components/Shop.js"
+import Product from "./components/Product.js"
 import Random from "./components/Random.js"
 import About from "./components/About.js"
 import Stores from "./components/Stores.js"
@@ -28,7 +29,8 @@ const App = () => {
           <Route path="/news" component={News}/>
           <Route path="/previews" component={Previews}/>
           <Route path="/lookbooks" component={LookBooks}/>
-          <Route path="/shop" component={Shop}/>
+          <Route path="/shop" exact component={Shop}/>
+          <Route path="/shop/:id" exact component={Product}/>
           <Route path="/random" component={Random}/>
           <Route path="/about" component={About} />
           <Route path="/stores" component={Stores} />
