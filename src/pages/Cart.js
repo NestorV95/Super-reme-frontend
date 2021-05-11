@@ -1,11 +1,15 @@
+//----------------------------------------- packages ---------------------------------------------//
 import React from 'react'
-import BottomNav from './BottomNav'
-import LogoCdt from './Logo'
+// import {Link} from "react-router-dom";
+//---------------------------------------- components --------------------------------------------//
+import LogoCdt from "../components/Logo";
+import BottomNav from '../components/BottomNav'
+//------------------------------------------ styles ----------------------------------------------//
 
+//----------------------------------------- cart page --------------------------------------------//
 const Cart = () => {
     return (
         <div>
-                {/* logo at top with CDT, click leads to home */}
                 <LogoCdt/>
                 {/* /shop/cart renders list of items in cart*/}
                 {/* each item entry has pic of item */}
@@ -14,10 +18,10 @@ const Cart = () => {
                 {/* each item has price */}
                 {/* subtotal displayed at bottom of list */}
                 {/* renders keep shopping button and checkout button(leads to /shop/checkout) */}
-                {/* navigation bar at bottom */}
                 <BottomNav/>
         </div>
     )
 }
+//-------------------------------------- Cart components -----------------------------------------//
 
 export default Cart
