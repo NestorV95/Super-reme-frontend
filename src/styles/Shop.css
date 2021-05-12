@@ -1,0 +1,238 @@
+.shop-content{
+    margin: 0;
+    padding: 0;
+    width:100vw;
+    height: 100vh;
+    border: .10rem solid #ff0000;
+    overflow: hidden;
+}
+
+.pi-outer{
+    position: relative;
+    display: table;
+    height:22rem;
+    margin: 0 auto;
+    padding: 0;  
+}
+
+.pi-inner{
+    margin: 0;
+    padding: 0;
+    width: 45rem;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.pi-card{
+    display: inline-block;
+    height: 22rem;
+    width: 3rem;
+    margin: 0rem .1rem 0rem 0.1rem;
+    padding: 0;
+    
+}
+.pi-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ps-content{
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255,.95);
+    height: 50vh;
+    width: 45rem;
+    top: 0; bottom:0; left: 0; right: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.ps-ic{
+    position: absolute;
+    display: block;
+    height: 95%;
+    width: 60%;
+    margin:0;
+    top: .75rem;
+    align-items: center;
+}
+.ps-img{
+    object-fit: contain;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.ps-details{
+    position: absolute;
+    display: block;
+    height:60%;
+    width: 40%;
+    top:2.5rem;
+    right:0;
+}
+
+.ps-name{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    height:2rem;
+    top:1rem;
+    right:0;
+    left:0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.10rem;
+}
+
+.ps-desc{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    height:20vh;
+    top:4rem;
+    right:0;
+    left:0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .9rem;
+}
+
+.ps-price{
+    position: absolute;
+    display: block;
+    text-align: left;
+    height:1.10rem;
+    bottom:0;
+    right:0;
+    left:2rem;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.10rem;
+}
+
+.ps-options{
+    position: absolute;
+    display: block;
+    height: 30%;
+    width: 40%;
+    right:0;
+    bottom: 0
+}
+
+.ps-add{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    height: 2rem;
+    width: 7rem;
+    left: 1rem;
+    top: 2rem;
+    text-decoration: none;
+    background: red;
+    box-sizing: border-box;
+    border: 1px solid red;
+    color: white;
+    padding:0.25rem .25rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .80rem;
+}
+
+.ps-hide{
+    position:absolute;
+    display: inline-block;
+    text-align: center;
+    height:2rem;
+    width: 7rem;
+    right: 1rem;
+    top: 2rem;
+    text-decoration: none;
+    background: black;
+    box-sizing: border-box;
+    border: 1px solid black;
+    color:white;
+    padding:0.25rem .25rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .80rem;
+}
+
+.ps-sh{
+    position: absolute;
+    display:inline;
+    color:red;
+    bottom: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .80rem;
+}
+
+.mini-cart{
+    position: absolute;
+    display: block;
+    width: 10rem;
+    top: 24vh;
+    left: 18%;
+    margin: 0;
+    z-index: 2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.mc-cnt{
+    display: block;
+    background-color: grey;
+    border:1px solid grey;
+    text-align: center;
+    font-size: .95rem;
+    color:black;
+    margin: 0;
+    padding: 0;
+    height: 1.25rem;
+}
+
+.mc-st{
+    display: block;
+    background-color: rgb(199, 199, 199);
+    border:1px solid grey;
+    text-align: center;
+    font-size: .95rem;
+    color:grey;
+    margin: 0 0 .1rem 0;
+    padding: 0;
+    height: 1.25rem;
+}
+
+.mc-vc{
+    display: block;
+    background: black;
+    border: 1px solid black;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    height:1.25rem;
+    font-weight: 500;
+    width: 100%;
+    margin: 0 0 .1rem 0;
+    padding:0rem .25rem;
+    font-size: .95rem;
+}
+
+.mc-co{
+    display: block;
+    text-align: center;
+    height: 1.25rem;
+    width: 100%;
+    text-decoration: none;
+    font-weight: 500;
+    background: red;
+    box-sizing: border-box;
+    border: 1px solid red;
+    color: white;
+    margin: 0 0 .05rem 0;
+    padding:0rem .25rem;
+    font-size: .95rem;
+}

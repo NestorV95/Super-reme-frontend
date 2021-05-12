@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 //---------------------------------------- components --------------------------------------------//
 import LogoCdt from "../components/Logo.js"
 //------------------------------------------ styles ----------------------------------------------//
-import "../Home.css";
+import "../styles/Home.css";
 //----------------------------------------- home page --------------------------------------------//
 const Home = () => {
   let cdtStyle = { color: "white" };
@@ -45,10 +45,10 @@ const HomeSocial = () => {
   return (
     <div className="home-social">
       <IconContext.Provider value={{ style: { fontSize: "20px", color: "grey" } }}>
-        <FaGithubSquare />
-        <FaTwitterSquare />
-        <FaLinkedin />
-        <FaYoutubeSquare />
+        <a className="home-si" href="https://cat-bounce.com/"> <FaGithubSquare /> </a>
+        <a className="home-si" href="http://www.leduchamp.com/"> <FaTwitterSquare /> </a>
+        <a className="home-si" href="http://www.patience-is-a-virtue.org/"> <FaLinkedin /> </a>
+        <a className="home-si" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > <FaYoutubeSquare/> </a>
       </IconContext.Provider>
     </div>
   );

@@ -1,51 +1,110 @@
 //----------------------------------------- packages ---------------------------------------------//
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useState} from "react";
 //---------------------------------------- components --------------------------------------------//
 import useFetch from '../helpers/useFetch'
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
 //------------------------------------------ styles ----------------------------------------------//
-
+import '../styles/Shop.css'
 //----------------------------------------- shop page --------------------------------------------//
-const Shop=()=>{
-    
+const Shop=(props)=>{
+    const [selection,setSelection]=useState({})
+    const [display,setDisplay]=useState(false)
+    const [cart, setCart]=useState([])
+    const [subtotal, setSubtotal] =useState(0)
+
+    const pickProduct = (product)=>{
+        setSelection(product)
+        setDisplay(true)
+    }
+
+    const hideProduct = ()=>{
+        setSelection({})
+        setDisplay(false)
+    }
+
+    const addToCart = choice =>{
+        console.log(choice.product)
+        const newCart = [...cart, choice.product]
+        const newSub = subtotal + choice.product.price
+        setCart(newCart)
+        setSubtotal(newSub)
+    }
+
+    let {data, isPending, error} = useFetch('http://localhost:3001/products')
+
     return(
         <div className="shop-content">
-            <h1>Shop Page</h1>
             <LogoCdt />
-            <Products />
-            {/* conditionally render cart next to index cards if cart.count > 0*/}
-            {/* cart  displays item count, subtotal, view/edit cart button, & checkout button*/}
-            {/* view/edit cart button leads to shop/cart*/}
-            {/* checkout button leads to shop/checkout */}
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {data && <Products products={data} select={pickProduct} />}
+            {display !== true? null : <ProductShow product={selection} add={addToCart} hide={hideProduct}/>}
+            {cart.length === 0? null : <MiniCart cart={cart} subtotal={subtotal}/>}
             <BottomNav/>
         </div>
     )
 }
 //--------------------------------------- shop components ----------------------------------------//
-const Products = () => {
-    let {data, isPending, error} = useFetch('http://localhost:3001/products')
+const Products = ({products, select}) => {
+
     return (
-        <div className="products-content">
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading...</div>}
-            {data && data.map(product=>{
-                return <ProductCard key={product.id} product={product}/>
-            })}   
+        <div className="pi-outer">
+            <ul className="pi-inner">   
+            {products.map(product=>{
+                return <ProductIndex key={product.id} product={product} select={select}/>
+            })}
+            </ul> 
         </div>
     )
 }
 
-const ProductCard = ({product}) =>{
-    let {id, image, name} = product
+const ProductIndex = ({product,select}) =>{
+    let {image, name} = product
     return(
-        <div className="product-card" style={{display: 'inline-block',margin: '.5rem'}}>
-            <Link to={`/shop/${id}`}>
-                <img src={image} alt={name} style={{height:'10rem',width:'10rem'}}></img>
-            </Link>
-        </div>
+        <li className="pi-card" onClick={()=>select(product)}>
+            <img className="pi-image"src={image} alt={name}></img>
+        </li>
     )
 }
+
+const ProductShow = ({product,hide,add}) => {
+    let {image, name, description, price} = product
+    return(  
+    <div className="ps-content">
+        <div className="ps-ic">
+            <img className="ps-img"src={image} alt={name}></img>
+        </div>
+        <div className="ps-details">
+            <p className="ps-name">{name}</p>
+            <p className="ps-desc">{description}</p>
+            <p className="ps-price">${price}</p> 
+        </div>
+        <div className="ps-options">
+                
+                <button className="ps-add" onClick={()=>add({product})}>add to cart</button>
+                <button className="ps-hide" onClick={()=>hide()}>keep shopping</button>
+                <p className="ps-sh">* free shipping on orders over $1000 some exceptions may apply</p>
+            </div>
+    </div>
+    )
+}
+
+const MiniCart = ({cart, subtotal}) =>{
+    let count = cart.length
+    return(
+        
+        <div className="mini-cart">
+            <p className="mc-cnt">{count===1? `${count} item in cart`: `${count} items in cart`}</p>
+            <p className="mc-st">subtotal <span style={{color:'black', fontSize: '1em'}}>${subtotal}</span></p>
+            <button className="mc-vc">view cart</button>
+            <button className="mc-co">checkout</button>
+        </div>
+       
+    )
+    
+}
+
+
 
 export default Shop

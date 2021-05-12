@@ -21,7 +21,7 @@ const useFetch = (url) => {
                 setError(error.message)
             })
         },[url])
-    return {data, isPending, error}
+    return {data,isPending,error}
 }
 
-export default useFetch
+export default useFetch;

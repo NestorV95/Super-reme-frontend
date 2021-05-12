@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../styles/BottomNav.css'
 
 const BottomNav = () => {
   return (
-    <div className="footer-nav">
+    <>
         <ul className="nav-ul">
           <li className="nav-li"> <Link className="nav-a" to="/news">News</Link> </li>
           <li className="nav-li"> <Link className="nav-a" to="/previews">Line Up Preview</Link> </li>
@@ -15,7 +16,7 @@ const BottomNav = () => {
           <li className="nav-li"> <Link className="nav-a" to="/contact">Contact</Link> </li>
           <li className="nav-li"> <Link className="nav-a" to="/mailinglist">Mailing List</Link> </li>
         </ul>
-    </div>
+    </>
   );
 };
 

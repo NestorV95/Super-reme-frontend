@@ -1,20 +1,19 @@
 import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+import "../styles/Logo.css"
 import logo from "../images/super-reme.png"
 
 export const Logo=()=>{
     return (
-        <div>
+        <>
             <Link to="/">
-                <img src={logo} alt="sr-logo" style={{width:'10rem'}}/>
+                <img className="logo"src={logo} alt="sr-logo"/>
             </Link> 
-        </div>
+        </>
     )
 }
 
-
-export const CurrentDateTime=(props)=>{
-    let {style} = props
+export const CurrentDateTime=({style})=>{
     const today = new Date();
     const [time, setTime] = useState(today)
 
@@ -31,7 +30,7 @@ export const CurrentDateTime=(props)=>{
     const hhmmss = time.toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit'})
 
     return(
-        <p style={style}>{`${mmddyyyy} ${hhmmss} HTX`}</p>
+        <p className="cdt"style={style}>{`${mmddyyyy} ${hhmmss} HTX`}</p>
     )
 }
 

@@ -1,0 +1,29 @@
+.nav-ul{
+    display: table; 
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Times New Roman', Times, serif;
+    bottom: 0;
+    margin-right: auto;
+    margin-left: auto; 
+    width: 100%;
+    position: absolute; 
+    overflow: auto; 
+}
+
+.nav-li{ 
+    text-align: center;
+    margin:0rem 1rem 0rem 1rem;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.nav-a{
+      color:black;
+      background-color: transparent;
+      text-decoration: none
+}
+  
+.nav-a:hover{
+    background-color: red;
+}

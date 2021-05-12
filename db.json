@@ -6,7 +6,6 @@
       "description": "double trouble hoodie",
       "price": 635.00,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bc6tP15dtp5RUuJRgnr6lgykyGa9iXUW2lMsekLKZJlHvVvx77HrayFfcIjCMO1mqv_rIXMj&usqp=CAc"
-  
     },
     {
       "id": 2,
@@ -25,11 +24,93 @@
     {
       "id": 4, 
       "name": "D.A.R.E shirt",
-      "description": "Drugs are really espensive so just but this shirt instead",
-      "image": "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/A-Lab-Trip-On-This-Black-T-Shirt--_310350-front-US.jpg",
       "price": 50.00,
-      "atWar": false
-      
+      "description": "Drugs are really espensive so just but this shirt instead",
+      "image": "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/A-Lab-Trip-On-This-Black-T-Shirt--_310350-front-US.jpg" 
+    },
+    {
+      "id": 5,
+      "name": "dt hoodie",
+      "description": "double trouble hoodie",
+      "price": 635.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bc6tP15dtp5RUuJRgnr6lgykyGa9iXUW2lMsekLKZJlHvVvx77HrayFfcIjCMO1mqv_rIXMj&usqp=CAc"
+    },
+    {
+      "id": 6,
+      "name": "oh darling shorts",
+      "description": "90s inspired graphic print shorts ",
+      "price": 350.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl277i9WK7ahD_VtjjSltCA6yG9WzbMeaWt3-TJ2UFREv2Ic9aNrUXle-6SPr57bi4jmyoF2U&usqp=CAc"
+    },
+    {
+      "id": 7,
+      "name": "Shrek shirt",
+      "description": "retro swamp green shrek shirt",
+      "price": 999.99,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTOVwiwB4GaPlUDK95gepSc31pQnNKsT__fb1uDNK-ScUuCH9fNRB0oxaXeb6W4lXWMcmAT5k_PvcxxxjW0eMcvXv2mSJWsUbWmmrm5z4zMSfnrwR5udhLzqQ&usqp=CAE"
+    },
+    {
+      "id": 8, 
+      "name": "D.A.R.E shirt",
+      "price": 50.00,
+      "description": "Drugs are really espensive so just but this shirt instead",
+      "image": "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/A-Lab-Trip-On-This-Black-T-Shirt--_310350-front-US.jpg" 
+    },
+    {
+      "id": 9,
+      "name": "dt hoodie",
+      "description": "double trouble hoodie",
+      "price": 635.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bc6tP15dtp5RUuJRgnr6lgykyGa9iXUW2lMsekLKZJlHvVvx77HrayFfcIjCMO1mqv_rIXMj&usqp=CAc"
+    },
+    {
+      "id": 10,
+      "name": "oh darling shorts",
+      "description": "90s inspired graphic print shorts ",
+      "price": 350.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl277i9WK7ahD_VtjjSltCA6yG9WzbMeaWt3-TJ2UFREv2Ic9aNrUXle-6SPr57bi4jmyoF2U&usqp=CAc"
+    },
+    {
+      "id": 11,
+      "name": "Shrek shirt",
+      "description": "retro swamp green shrek shirt",
+      "price": 999.99,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTOVwiwB4GaPlUDK95gepSc31pQnNKsT__fb1uDNK-ScUuCH9fNRB0oxaXeb6W4lXWMcmAT5k_PvcxxxjW0eMcvXv2mSJWsUbWmmrm5z4zMSfnrwR5udhLzqQ&usqp=CAE"
+    },
+    {
+      "id": 12, 
+      "name": "D.A.R.E shirt",
+      "price": 50.00,
+      "description": "Drugs are really espensive so just but this shirt instead",
+      "image": "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/A-Lab-Trip-On-This-Black-T-Shirt--_310350-front-US.jpg" 
+    },
+    {
+      "id": 13,
+      "name": "dt hoodie",
+      "description": "double trouble hoodie",
+      "price": 635.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bc6tP15dtp5RUuJRgnr6lgykyGa9iXUW2lMsekLKZJlHvVvx77HrayFfcIjCMO1mqv_rIXMj&usqp=CAc"
+    },
+    {
+      "id": 14,
+      "name": "oh darling shorts",
+      "description": "90s inspired graphic print shorts ",
+      "price": 350.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl277i9WK7ahD_VtjjSltCA6yG9WzbMeaWt3-TJ2UFREv2Ic9aNrUXle-6SPr57bi4jmyoF2U&usqp=CAc"
+    },
+    {
+      "id": 15,
+      "name": "Shrek shirt",
+      "description": "retro swamp green shrek shirt",
+      "price": 999.99,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTOVwiwB4GaPlUDK95gepSc31pQnNKsT__fb1uDNK-ScUuCH9fNRB0oxaXeb6W4lXWMcmAT5k_PvcxxxjW0eMcvXv2mSJWsUbWmmrm5z4zMSfnrwR5udhLzqQ&usqp=CAE"
+    },
+    {
+      "id": 16, 
+      "name": "D.A.R.E shirt",
+      "price": 50.00,
+      "description": "Drugs are really espensive so just but this shirt instead",
+      "image": "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/A-Lab-Trip-On-This-Black-T-Shirt--_310350-front-US.jpg" 
     }
   ]
 }
