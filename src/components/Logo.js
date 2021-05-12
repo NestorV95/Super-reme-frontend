@@ -34,12 +34,11 @@ export const CurrentDateTime=({style})=>{
     )
 }
 
-export const LogoCdt=(props)=>{
-    let {style} = props
+export const LogoCdt=({div,text})=>{
     return(
-        <div className="logo-cdt">
+        <div className="logo-cdt" style={div}>
             <Logo/>
-            <CurrentDateTime style={style}/>
+            <CurrentDateTime style={text}/>
         </div>
     )
 }

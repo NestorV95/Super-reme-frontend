@@ -5,17 +5,19 @@ import {FaLinkedin,FaGithubSquare,FaTwitterSquare,FaYoutubeSquare} from "react-i
 import { Link } from "react-router-dom";
 //---------------------------------------- components --------------------------------------------//
 import LogoCdt from "../components/Logo.js"
+import Header from "../components/Header.js"
 //------------------------------------------ styles ----------------------------------------------//
 import "../styles/Home.css";
 //----------------------------------------- home page --------------------------------------------//
 const Home = () => {
-  let cdtStyle = { color: "white" };
+  let text = { color: "white" };
+  let div = {marginTop: "30vh"}
+
   return (
     <div className="home">
       <div className="home-content">
-        <div className="home-logo">
-          <LogoCdt style={cdtStyle} />
-        </div>
+        <Header />
+        <LogoCdt div={div} text={text} />
         <HomeNav />
         <HomeSocial />
       </div>
@@ -24,6 +26,7 @@ const Home = () => {
 };
 //-------------------------------------- home components -----------------------------------------//
 const HomeNav = () => {
+
   return (
     <div className="home-menu">
       <ul className="hn-ul">

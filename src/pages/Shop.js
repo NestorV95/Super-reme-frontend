@@ -31,8 +31,7 @@ const Shop=(props)=>{
         setSubtotal(newSub)
     }
 
-    let {data, isPending, error} = useFetch('http://localhost:3001/products')
-
+    let {data, isPending, error} = useFetch('http://localhost:3000/api/v1/products')
     return(
         <div className="shop-content">
             <LogoCdt />
@@ -47,7 +46,7 @@ const Shop=(props)=>{
 }
 //--------------------------------------- shop components ----------------------------------------//
 const Products = ({products, select}) => {
-
+    console.log(products)
     return (
         <div className="pi-outer">
             <ul className="pi-inner">   

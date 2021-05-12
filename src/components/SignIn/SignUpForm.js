@@ -1,9 +1,12 @@
 import React from "react";
+import '../../styles/SignIn.css'
 
-const SignUp=()=>{
+const SignUpForm=({toggle})=>{
+    const togEm=()=>{
+        toggle()
+    }
     return(
         <div className="su-content">
-            <form>
                 <div className="su-name">
                     <input type="text" placeholder="first name"/> <br/>
                     <input type="text" placeholder="last name"/> <br/>
@@ -20,11 +23,11 @@ const SignUp=()=>{
                     <input type="text" placeholder="confirm password"/> <br/> 
                 </div>
                 <div className="su-button">
-                    <button>Sign Up</button>  
+                    <button >Sign Up</button>  
+                    <button className="hdr-su" onClick={()=>togEm()}>Sign In</button> 
                 </div>
-            </form>
         </div>
     )
 }
 
-export default SignUp
+export default SignUpForm
