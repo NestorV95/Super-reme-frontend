@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 
 const opt={
     method: 'GET',
@@ -5,13 +6,13 @@ const opt={
 }
 
 const useFetch = (url,req=opt) => {
-    fetch(url,opt)
-        .then(res=> res.json())
-        .then(data=>{return data})
+    const [data, setData] = useState(null)
+
+    useEffect(()=>{
+        fetch(url,req)
+            .then(res=>res.json())
+            .then(data=>setData(data))
+        },[url,req])
+    return {data}
 }
-   
-
-
-
-
 export default useFetch;
