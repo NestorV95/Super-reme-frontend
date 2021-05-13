@@ -1,7 +1,7 @@
 
 const opt={
     method: 'GET',
-    headers: {'Content-Type':'application/json','Accept':'application/json'}
+    headers: {'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer <token>'}
 }
 
 const UseFetch = (url,req=opt) => {

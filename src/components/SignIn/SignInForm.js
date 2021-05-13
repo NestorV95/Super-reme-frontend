@@ -1,16 +1,15 @@
 import React,{useState} from "react";
 import '../../styles/SignIn.css'
 
-const SignInForm = ({toggle, logIn}) =>{
+const SignInForm = ({toggle, logOn}) =>{
     const [usrnm, setUsrnm] = useState("")
     const [pwd, setPwd] = useState("")
 
     const logem=()=>{
-        let log = {
-            username: usrnm,
-            password: pwd
-        }
-        logIn(log)
+        let log ={
+            username:usrnm,password: pwd}
+        console.log(log)
+        logOn(log)
     }
 
     const togEm=()=>{

@@ -3,6 +3,7 @@ import React,{useReducer} from "react";
 // eslint-disable-next-line
 import {BrowserRouter as Router,Switch,Route, withRouter,} from "react-router-dom";
 //---------------------------------------- components --------------------------------------------//
+// eslint-disable-next-line
 import UseFetch from './helpers/UseFetch'
 //------------------------------------------ pages -----------------------------------------------//
 import Home from "./pages/Home.js"

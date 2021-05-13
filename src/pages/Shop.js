@@ -33,7 +33,7 @@ const Shop=(props)=>{
         setSubtotal(newSub)
     }
 
-    let {data} = UseFetch('http://localhost:3000/api/v1/products')
+    let data = UseFetch('http://localhost:3000/api/v1/products')
     return(
         <div className="shop-content">
             <LogoCdt />

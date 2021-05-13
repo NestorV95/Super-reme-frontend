@@ -3,7 +3,7 @@ import SignInForm from './SignInForm'
 import SignUpForm from './SignUpForm'
 import '../../styles/SignIn.css'
 
-const SignContainer = ({logIn,createUser}) => {
+const SignContainer = ({logOn,createUser}) => {
     const [toggle, setToggle] = useState(false)
 
     const togEm = ()=>{
@@ -13,7 +13,7 @@ const SignContainer = ({logIn,createUser}) => {
     return(
         <div className="si-con">
             {toggle === false? 
-                <SignInForm toggle={togEm} logIn={logIn}/>
+                <SignInForm toggle={togEm} logOn={logOn}/>
                 :
                 <SignUpForm toggle={togEm} createUser={createUser}/>
             }
