@@ -4,7 +4,7 @@ import React,{useReducer} from "react";
 import {BrowserRouter as Router,Switch,Route, withRouter,} from "react-router-dom";
 //---------------------------------------- components --------------------------------------------//
 // eslint-disable-next-line
-import UseFetch from './helpers/UseFetch'
+import UseFetch from './helpers/useFetch'
 //------------------------------------------ pages -----------------------------------------------//
 import Home from "./pages/Home.js"
 import News from "./pages/News.js"

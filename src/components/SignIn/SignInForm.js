@@ -7,7 +7,9 @@ const SignInForm = ({toggle, logOn}) =>{
 
     const logem=()=>{
         let log ={
-            username:usrnm,password: pwd}
+            username:usrnm,
+            password: pwd
+        }
         console.log(log)
         logOn(log)
     }

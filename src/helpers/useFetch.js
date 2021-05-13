@@ -4,7 +4,7 @@ const opt={
     headers: {'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer <token>'}
 }
 
-const UseFetch = (url,req=opt) => {
+const useFetch = (url,req=opt) => {
     fetch(url,opt)
         .then(res=> res.json())
         .then(data=>{return data})
@@ -14,4 +14,4 @@ const UseFetch = (url,req=opt) => {
 
 
 
-export default UseFetch;
+export default useFetch;

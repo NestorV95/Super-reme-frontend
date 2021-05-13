@@ -1,7 +1,7 @@
 //----------------------------------------- packages ---------------------------------------------//
 import React,{useState} from "react";
 //---------------------------------------- components --------------------------------------------//
-import UseFetch from '../helpers/UseFetch'
+import GetFetch from '../helpers/GetFetch'
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
 //------------------------------------------ styles ----------------------------------------------//
@@ -33,7 +33,8 @@ const Shop=(props)=>{
         setSubtotal(newSub)
     }
 
-    let data = UseFetch('http://localhost:3000/api/v1/products')
+    let data = GetFetch('http://localhost:3000/api/v1/products')
+    console.log(data)
     return(
         <div className="shop-content">
             <LogoCdt />
