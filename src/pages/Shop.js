@@ -1,7 +1,7 @@
 //----------------------------------------- packages ---------------------------------------------//
 import React,{useState} from "react";
 //---------------------------------------- components --------------------------------------------//
-import useFetch from '../helpers/useFetch'
+import UseFetch from '../helpers/UseFetch'
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
 //------------------------------------------ styles ----------------------------------------------//
@@ -24,19 +24,21 @@ const Shop=(props)=>{
     }
 
     const addToCart = choice =>{
+
         console.log(choice.product)
         const newCart = [...cart, choice.product]
         const newSub = subtotal + choice.product.price
+        // dispatch({type: ACTIONS})
         setCart(newCart)
         setSubtotal(newSub)
     }
 
-    let {data, isPending, error} = useFetch('http://localhost:3000/api/v1/products')
+    let {data} = UseFetch('http://localhost:3000/api/v1/products')
     return(
         <div className="shop-content">
             <LogoCdt />
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading...</div>}
+            {/* {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>} */}
             {data && <Products products={data} select={pickProduct} />}
             {display !== true? null : <ProductShow product={selection} add={addToCart} hide={hideProduct}/>}
             {cart.length === 0? null : <MiniCart cart={cart} subtotal={subtotal}/>}

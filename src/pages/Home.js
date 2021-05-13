@@ -9,14 +9,14 @@ import Header from "../components/Header.js"
 //------------------------------------------ styles ----------------------------------------------//
 import "../styles/Home.css";
 //----------------------------------------- home page --------------------------------------------//
-const Home = () => {
+const Home = ({logOn, actions, createUser}) => {
   let text = { color: "white" };
   let div = {marginTop: "30vh"}
 
   return (
     <div className="home">
       <div className="home-content">
-        <Header />
+        <Header logOn={logOn} createUser={createUser}/>
         <LogoCdt div={div} text={text} />
         <HomeNav />
         <HomeSocial />

@@ -3,7 +3,7 @@ import SignInButton from './SignIn/SignInButton'
 import SignContainer from './SignIn/SignContainer'
 import '../styles/Header.css'
 
-const Header = () => {
+const Header = ({logOn, createUser}) => {
     const [siForm,setSiForm] = useState(false)
 
     const showSignIn=()=>{
@@ -16,7 +16,7 @@ const Header = () => {
                 { siForm === false ? 
                     <SignInButton signIn={showSignIn}/> 
                     : 
-                    <SignContainer />
+                    <SignContainer logOn={logOn} createUser={createUser}/>
                 }
             </li>
         </ul>
