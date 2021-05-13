@@ -22,16 +22,16 @@ const NewsImages=()=>{
     return(
         <div className="nic-div">
             <div>
-                <p>need an array of images </p>
+                <img src="https://assets.supremenewyork.com/211389/ma/ktFee9y6eFU.jpg" width='100px'></img>
                 <image src="" alt=""/>  
             </div>
-            <div className="nrc-div">
+            {/* <div className="nrc-div">
                 <ul>
                     <li>{"<<<"}</li>
                     <li>{"# of #"}</li>
                     <li>{">>>"}</li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -39,9 +39,12 @@ const NewsImages=()=>{
 const NewsContent=()=>{
     return(
         <div>
-                <p>publish date</p>
-                <p>news title</p>
-                <p>news content</p>
+                <p>Super-reme/Timberland</p>
+                <p>Super-reme has worked with Timberland on a new collection for Spring 2021.
+                    The collection consists of an Anorak, Track Pant, Painter Pant, Crewneck, Camp Cap and Beanie.
+                </p>
+                <p>Available May 13th</p>
+                <p>Available in Japan May 15th</p>
         </div>
     )
 }
