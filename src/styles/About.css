@@ -1,0 +1,25 @@
+.about-page{
+    margin: 0;
+    padding: 0;
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about-content{
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255,.95);
+    height: 48vh;
+    width: 30rem;
+    top: 30vh; left: 0; right: 0;
+    margin: auto;
+}
+
+.abt-p{
+    margin: 0 0 .15rem 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
