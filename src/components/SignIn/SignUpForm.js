@@ -1,6 +1,6 @@
 import React,{useState,useContext} from "react";
 import { DataContext } from "../../App";
-import '../../styles/SignIn.css'
+import '../../styles/SignUp.css'
 
 const SignUpForm=({toggle})=>{
     const {dispatchValue} = useContext(DataContext)
@@ -45,25 +45,15 @@ const SignUpForm=({toggle})=>{
     
     return(
         <div className="su-content">
-                <div className="su-name">
-                    <input type="text" value={fstName} onChange={(e)=>setFstName(e.target.value)} placeholder="first name"/> <br/>
-                    <input type="text" value={lstName} onChange={(e)=>setLstName(e.target.value)} placeholder="last name"/> <br/>
-                </div>
-                <div className="su-username">
-                    <input type="text" value={usrName} onChange={(e)=>setUsrName(e.target.value)} placeholder="username"/> <br/>
-                </div>
-                <div className="su-email">
-                    <input type="text" value={eml} onChange={(e)=>setEml(e.target.value)} placeholder="email address"/> <br/>
-                </div>
-
-                <div className="su-password">
-                    <input type="text"  value={pwd} onChange={(e)=>setPwd(e.target.value)} placeholder="password"/> <br/>
-                    <input type="text"  value={cnfPwd} onChange={(e)=>setCnfPwd(e.target.value)} placeholder="confirm password"/> <br/> 
-                </div>
-                <div className="su-btn-div">
-                    <button className="su-btn" onClick={()=>signUp()}>Sign Up</button>  
-                    <button className="su-si" onClick={()=>togEm()}>Sign In</button> 
-                </div>
+            <p className="su-tt" >we swear its not a cult</p>
+            <input className="su-in" type="text" value={fstName} onChange={(e)=>setFstName(e.target.value)} placeholder="first name"/> <br/>
+            <input className="su-in" type="text" value={lstName} onChange={(e)=>setLstName(e.target.value)} placeholder="last name"/> <br/>     
+            <input className="su-in" type="text" value={usrName} onChange={(e)=>setUsrName(e.target.value)} placeholder="username"/> <br/>      
+            <input className="su-in" type="text" value={eml} onChange={(e)=>setEml(e.target.value)} placeholder="email address"/> <br/>   
+            <input className="su-in" type="text"  value={pwd} onChange={(e)=>setPwd(e.target.value)} placeholder="password"/> <br/>
+            <input className="su-in" type="text"  value={cnfPwd} onChange={(e)=>setCnfPwd(e.target.value)} placeholder="confirm password"/> <br/> 
+            <button className="su-btn" onClick={()=>signUp()}>Sign Up</button>  
+            <button className="su-si" onClick={()=>togEm()}>Sign In</button> 
         </div>
     )
 }
