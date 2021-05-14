@@ -5,15 +5,16 @@ import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
 //----------------------------------------- styles -----------------------------------------------//
-
+import '../styles/News.css'
 //----------------------------------------- news page --------------------------------------------//
 const News=()=>{
     return(
-        <div>
-            <h1>News Page</h1>
+        <div className="news-page">
             <LogoCdt/>
-            <NewsImages/>
-            <NewsContent/>
+            <div className="news-content">
+                <NewsImages/>
+                <NewsContent/> 
+            </div>
             <BottomNav/>
         </div>
     )
@@ -43,16 +44,14 @@ const NewsImages=()=>{
     } 
     return(
         <div className="nic-div">
-            <div>
-                <img src={`${niArray[index]}`} width='100px' alt=""></img>
+            <div className="ni-div">
+                <img className="ni" src={`${niArray[index]}`} alt=""></img>
             </div>
-            <div className="nrc-div">
-                <ul>
-                    <li>  <FaArrowLeft onClick={()=>decrease()}/> </li>
-                    <li>{`${index+1} of ${niArray.length}`}</li>
-                    <li> <FaArrowRight onClick={()=>increase()}/> </li>
-                </ul>
-            </div>
+            <ul className="nrc-ul">
+                <li className="nrc-li"><FaArrowLeft onClick={()=>decrease()}/> </li>
+                <li className="nrc-li">{`${index+1} of ${niArray.length}`}</li>
+                <li className="nrc-li"><FaArrowRight onClick={()=>increase()}/> </li>
+            </ul>
         </div>
     )
 }
@@ -60,16 +59,16 @@ const NewsImages=()=>{
 const NewsContent=()=>{
     return(
         <div className="nc-div">
-                <p className="nc-dt" > 05/11/2021</p>
-                <p className="nc-tt">X Super-reme© x Hot-dogs© X</p>
+                <p className="nc-dt">05/11/2021</p>
+                <p className="nc-tt"><strong>X Super-reme© x Hot-dogs© X</strong></p>
                 <p className="nc-st">Here at Super-reme we're happy to announce </p>
                 <p className="nc-st">we will be launching a new line of designer. </p>
                 <p className="nc-st">Our collection will consist of Fall Park </p>
                 <p className="nc-st">Branks, Hench's yellow mustard, sauerkraut, </p> 
                 <p className="nc-st">diced onions Bumseam white bread and many</p>
-                <p className="nc-st"> more of your favorite struggle essentials. </p>
+                <p className="nc-st">more of your favorite struggle essentials. </p>
                 
-                <p className="nc-ava"> Available May 14th</p>
+                <p className="nc-ava">Available May 14th</p>
                 <p className="nc-avj">Available in Japan May 15th</p>
         </div>
     )
