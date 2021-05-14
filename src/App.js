@@ -43,13 +43,15 @@ const App = props =>{
   }
 
   const [data, dispatch] = useReducer(reducer, initialData)
+
   const {currUser, loggedIn, cart, subtotal} = data 
  
   const currUserValue = useMemo(()=>currUser,[currUser])
   const loggedInValue = useMemo(()=>loggedIn,[loggedIn])
   const cartValue = useMemo(()=>cart,[cart])
-  const dispatchValue = useMemo(()=>dispatch,[dispatch])
   const subtotalValue = useMemo(()=>subtotal,[subtotal])
+  const dispatchValue = useMemo(()=>dispatch,[dispatch])
+  
 
   return(
     <div className="App">
@@ -59,8 +61,6 @@ const App = props =>{
     </div>
   )
 }
-
-
 
 const Routes =()=>{
   return(
