@@ -1,17 +1,17 @@
 //----------------------------------------- packages ---------------------------------------------//
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 //---------------------------------------- components --------------------------------------------//
 import useFetch from '../helpers/useFetch'
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
+import { DataContext } from "../App";
 //------------------------------------------ styles ----------------------------------------------//
 import '../styles/Shop.css'
 //----------------------------------------- shop page --------------------------------------------//
 const Shop=(props)=>{
+    const {cartValue} = useContext(DataContext)
     const [selection,setSelection]=useState({})
     const [display,setDisplay]=useState(false)
-    const [cart, setCart]=useState([])
-    const [subtotal, setSubtotal] =useState(0)
 
     const pickProduct = (product)=>{
         setSelection(product)
@@ -23,31 +23,21 @@ const Shop=(props)=>{
         setDisplay(false)
     }
 
-    const addToCart = choice =>{
-
-        console.log(choice.product)
-        const newCart = [...cart, choice.product]
-        const newSub = subtotal + choice.product.price
-        // dispatch({type: ACTIONS})
-        setCart(newCart)
-        setSubtotal(newSub)
-    }
-
     let {data} = useFetch('http://localhost:3000/api/v1/products')
-    console.log(data)
     return(
         <div className="shop-content">
             <LogoCdt />
             {data && <Products products={data} select={pickProduct} />}
-            {display !== true? null : <ProductShow product={selection} add={addToCart} hide={hideProduct}/>}
-            {cart.length === 0? null : <MiniCart cart={cart} subtotal={subtotal}/>}
+            {display !== true? null : <ProductShow product={selection} hide={hideProduct}/>}
+            {cartValue.length === 0? null : <MiniCart />}
             <BottomNav/>
         </div>
     )
 }
 //--------------------------------------- shop components ----------------------------------------//
 const Products = ({products, select}) => {
-    console.log(products)
+
+
     return (
         <div className="pi-outer">
             <ul className="pi-inner">   
@@ -68,8 +58,13 @@ const ProductIndex = ({product,select}) =>{
     )
 }
 
-const ProductShow = ({product,hide,add}) => {
-    let {image, name, description, price} = product
+const ProductShow = ({product,hide}) => {
+    const {dispatchValue} = useContext(DataContext)
+    const {image, name, description, price} = product
+
+    const addToCart = () =>{
+        dispatchValue({type: 'ADD_PRODUCT', product: product, price: product.price })
+    }
     return(  
     <div className="ps-content">
         <div className="ps-ic">
@@ -81,22 +76,24 @@ const ProductShow = ({product,hide,add}) => {
             <p className="ps-price">${price}</p> 
         </div>
         <div className="ps-options">
-                
-                <button className="ps-add" onClick={()=>add({product})}>add to cart</button>
-                <button className="ps-hide" onClick={()=>hide()}>keep shopping</button>
-                <p className="ps-sh">* free shipping on orders over $1000 some exceptions may apply</p>
-            </div>
+            <button className="ps-add" onClick={()=>addToCart({product})}>add to cart</button>
+            <button className="ps-hide" onClick={()=>hide()}>keep shopping</button>
+            <p className="ps-sh">* free shipping on orders over $1000 some exceptions may apply</p>
+        </div>
     </div>
     )
 }
 
-const MiniCart = ({cart, subtotal}) =>{
-    let count = cart.length
+const MiniCart = () =>{
+    const {cartValue,subtotalValue} = useContext(DataContext)
+    let count = cartValue.length
+
+    console.log(cartValue,subtotalValue)
     return(
         
         <div className="mini-cart">
             <p className="mc-cnt">{count===1? `${count} item in cart`: `${count} items in cart`}</p>
-            <p className="mc-st">subtotal <span style={{color:'black', fontSize: '1em'}}>${subtotal}</span></p>
+            <p className="mc-st">subtotal <span style={{color:'black', fontSize: '1em'}}>${subtotalValue}</span></p>
             <button className="mc-vc">view cart</button>
             <button className="mc-co">checkout</button>
         </div>

@@ -22,7 +22,7 @@ import "./styles/App.css"
 export const DataContext = createContext()
 
 const App = props =>{
-  const initialData = {currUser:{}, token:null,  loggedIn:false, cart:[]}
+  const initialData = {currUser:{}, token:null,  loggedIn:false, cart:[], subtotal: 0}
   
   const reducer=(state, action)=>{
     switch(action.type){
@@ -31,7 +31,11 @@ const App = props =>{
       case 'LOG_OUT':
         return {...state, currUser:{},token:null,loggedIn: false}
       case 'ADD_PRODUCT':
-        return {...state, cart: [...state.cart, action.payload]}
+        
+        const newSubtotal = state.subtotal + action.price
+        
+        console.log(state.subtotal, action.price, newSubtotal)
+        return {...state, cart: [...state.cart, action.product], subtotal: newSubtotal}
       case 'REMOVE_PRODUCT':
         const rmvProduct = state.cartt.findIndex(prod=> prod.id === action.payload.id)
         const newCart = state.cart.splice(rmvProduct,1)[0]
@@ -42,16 +46,17 @@ const App = props =>{
   }
 
   const [data, dispatch] = useReducer(reducer, initialData)
-  const {currUser, loggedIn, cart} = data 
+  const {currUser, loggedIn, cart, subtotal} = data 
  
   const currUserValue = useMemo(()=>currUser,[currUser])
   const loggedInValue = useMemo(()=>loggedIn,[loggedIn])
   const cartValue = useMemo(()=>cart,[cart])
   const dispatchValue = useMemo(()=>dispatch,[dispatch])
+  const subtotalValue = useMemo(()=>subtotal,[subtotal])
 
   return(
     <div className="App">
-      <DataContext.Provider value={{currUserValue,loggedInValue,cartValue, dispatchValue}}>
+      <DataContext.Provider value={{currUserValue,loggedInValue,cartValue, subtotalValue, dispatchValue}}>
         <Routes />
       </DataContext.Provider>
     </div>
