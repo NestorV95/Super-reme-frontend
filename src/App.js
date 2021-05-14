@@ -30,14 +30,14 @@ const App = props =>{
         return {...state, currUser: action.user,token: action.jwt,loggedIn: true}
       case 'LOG_OUT':
         return {...state, currUser:{},token:null,loggedIn: false}
+      case 'GET_CART':
+        return {...state, cart: action.cart, subtotal: action.subtotal}
       case 'ADD_PRODUCT':
-        
         const newSubtotal = state.subtotal + action.price
-        
         console.log(state.subtotal, action.price, newSubtotal)
         return {...state, cart: [...state.cart, action.product], subtotal: newSubtotal}
       case 'REMOVE_PRODUCT':
-        const rmvProduct = state.cartt.findIndex(prod=> prod.id === action.payload.id)
+        const rmvProduct = state.cart.findIndex(prod=> prod.id === action.payload.id)
         const newCart = state.cart.splice(rmvProduct,1)[0]
         return {...state,cart: newCart}
       default: 

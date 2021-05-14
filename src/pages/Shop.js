@@ -1,5 +1,5 @@
 //----------------------------------------- packages ---------------------------------------------//
-import React,{useState,useContext} from "react";
+import React,{useState,useEffect, useContext} from "react";
 //---------------------------------------- components --------------------------------------------//
 import useFetch from '../helpers/useFetch'
 import BottomNav from "../components/BottomNav";
@@ -12,6 +12,7 @@ const Shop=(props)=>{
     const {cartValue} = useContext(DataContext)
     const [selection,setSelection]=useState({})
     const [display,setDisplay]=useState(false)
+
 
     const pickProduct = (product)=>{
         setSelection(product)
@@ -88,7 +89,6 @@ const MiniCart = () =>{
     const {cartValue,subtotalValue} = useContext(DataContext)
     let count = cartValue.length
 
-    console.log(cartValue,subtotalValue)
     return(
         
         <div className="mini-cart">
