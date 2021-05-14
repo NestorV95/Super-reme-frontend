@@ -1,7 +1,10 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
+import { DataContext } from "../../App";
 import '../../styles/SignIn.css'
 
-const SignUpForm=({toggle, createUser})=>{
+const SignUpForm=({toggle})=>{
+    const {dispatchValue} = useContext(DataContext)
+
     const [fstName,setFstName] = useState("")
     const [lstName,setLstName] = useState("")
     const [usrName, setUsrName] = useState("")
@@ -9,14 +12,12 @@ const SignUpForm=({toggle, createUser})=>{
     const [pwd,setPwd] = useState("")
     const [cnfPwd,setCnfPwd] = useState("")
 
-   
-
     const togEm=()=>{
         toggle()
     }
 
-    const SigEm=()=>{
-        let log={
+    const signUp = ()=>{
+        const newUser={
             // eslint-disable-next-line
             ['first_name']: fstName,
             // eslint-disable-next-line
@@ -28,9 +29,18 @@ const SignUpForm=({toggle, createUser})=>{
             ['password_confirmation']: cnfPwd
         }
         if(pwd === cnfPwd){
-            createUser(log)
+            const req={
+                method:'POST',
+                headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer <token>'},
+                body: JSON.stringify({user:newUser})
+            }
+            fetch('http://localhost:3000/api/v1/users',req)
+            .then(res=>res.json())
+            .then(nd=>{
+                dispatchValue({type:'LOG_IN', user: nd.user, jwt: nd.jwt});
+                localStorage.setItem("user_id", JSON.stringify(nd.jwt));
+            })
         }
-        
     }
     
     return(
@@ -51,7 +61,7 @@ const SignUpForm=({toggle, createUser})=>{
                     <input type="text"  value={cnfPwd} onChange={(e)=>setCnfPwd(e.target.value)} placeholder="confirm password"/> <br/> 
                 </div>
                 <div className="su-btn-div">
-                    <button className="su-btn" onClick={()=>SigEm()}>Sign Up</button>  
+                    <button className="su-btn" onClick={()=>signUp()}>Sign Up</button>  
                     <button className="su-si" onClick={()=>togEm()}>Sign In</button> 
                 </div>
         </div>

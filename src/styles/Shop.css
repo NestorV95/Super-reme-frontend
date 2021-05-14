@@ -3,23 +3,26 @@
     padding: 0;
     width:100vw;
     height: 100vh;
-    border: .10rem solid #ff0000;
     overflow: hidden;
 }
 
 .pi-outer{
     position: relative;
     display: table;
-    height:22rem;
+    height: 22rem;
     margin: 0 auto;
     padding: 0;  
+    border: .10rem solid #ff0000;
 }
 
 .pi-inner{
+    display: block;
     margin: 0;
     padding: 0;
+    height:22rem;
     width: 45rem;
     white-space: nowrap;
+    overflow: hidden;
     overflow-x: auto;
 }
 

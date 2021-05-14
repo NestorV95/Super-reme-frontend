@@ -1,10 +1,8 @@
 //----------------------------------------- packages ---------------------------------------------//
-import React,{useReducer} from "react";
-// eslint-disable-next-line
-import {BrowserRouter as Router,Switch,Route, withRouter,} from "react-router-dom";
+import React,{Fragment, useReducer, createContext, useMemo} from "react"; //
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 //---------------------------------------- components --------------------------------------------//
-// eslint-disable-next-line
-import UseFetch from './helpers/useFetch'
+// import Routes from './components/Routes'
 //------------------------------------------ pages -----------------------------------------------//
 import Home from "./pages/Home.js"
 import News from "./pages/News.js"
@@ -21,100 +19,73 @@ import MailingList from "./pages/MailingList.js"
 //----------------------------------------- styles -----------------------------------------------//
 import "./styles/App.css"
 //--------------------------------------- application --------------------------------------------//
-const ACTIONS={
-    LOG_IN: 'LOG_IN',
-    LOG_OUT: 'LOG_OUT',
-    ADD_PRODUCT: 'ADD_PRODUCT',
-    REMOVE_PRODUCT:'REMOVE_PRODUCT'
-  }
-
-
-const cartReducer=(state,action)=>{
-    switch(action.type){
-      case ACTIONS.ADD_PRODUCT:
-      return {
-        ...state,
-        cart: [...state.cart, action.payload]
-      }
-      case ACTIONS.REMOVE_PRODUCT:
-        let rmvProduct = state.cartt.findIndex(prod=> prod.id === action.payload.id)
-        let newCart = state.cart.splice(rmvProduct,1)[0]
-      return {...state, cart: newCart}
-      default: return state
-    }
-  }
-
+export const DataContext = createContext()
 
 const App = props =>{
-
-  const userReducer=(state, action)=>{
+  const initialData = {currUser:{}, token:null,  loggedIn:false, cart:[], subtotal: 0}
+  
+  const reducer=(state, action)=>{
     switch(action.type){
-      case ACTIONS.LOG_IN:
-      return {
-        ...state, currUser: action.payload
-      }
-      case ACTIONS.LOG_OUT:
-      return {...state, currUser: {}}
-      default: return state
+      case 'LOG_IN':
+        return {...state, currUser: action.user,token: action.jwt,loggedIn: true}
+      case 'LOG_OUT':
+        return {...state, currUser:{},token:null,loggedIn: false}
+      case 'GET_CART':
+        return {...state, cart: action.cart, subtotal: action.subtotal}
+      case 'ADD_PRODUCT':
+        const newSubtotal = state.subtotal + action.price
+        console.log(state.subtotal, action.price, newSubtotal)
+        return {...state, cart: [...state.cart, action.product], subtotal: newSubtotal}
+      case 'REMOVE_PRODUCT':
+        const rmvProduct = state.cart.findIndex(prod=> prod.id === action.payload.id)
+        const newCart = state.cart.splice(rmvProduct,1)[0]
+        return {...state,cart: newCart}
+      default: 
+        return state
     }
   }
 
-  // eslint-disable-next-line
-  const [currUser, currUserDispatch] = useReducer(userReducer,{})
-  // eslint-disable-next-line
-  const [cart, cartDispatch] = useReducer(cartReducer,[])
-  
-  
-  
+  const [data, dispatch] = useReducer(reducer, initialData)
+  const {currUser, loggedIn, cart, subtotal} = data 
+ 
+  const currUserValue = useMemo(()=>currUser,[currUser])
+  const loggedInValue = useMemo(()=>loggedIn,[loggedIn])
+  const cartValue = useMemo(()=>cart,[cart])
+  const dispatchValue = useMemo(()=>dispatch,[dispatch])
+  const subtotalValue = useMemo(()=>subtotal,[subtotal])
 
-  const CreateUser = (user)=>{
-    console.log(user)
-    const req={
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer <token>'},
-      body: JSON.stringify({user:user})
-    }
-    console.log(req)
-    fetch('http://localhost:3000/api/v1/users',req)
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-    })
-    
-    // currUserDispatch(data)
-  }
-
-  // missing a few steps before i can complete this. 
-  const LogOn=({log})=>{
-    // let {data, isPending, error} = useFetch(`http://localhost:3000/api/v1/users/${log.id}`)
-    // currUserDispatch(ACTIONS.LOG_IN, data)
-    console.log(log)
-  }
+  return(
+    <div className="App">
+      <DataContext.Provider value={{currUserValue,loggedInValue,cartValue, subtotalValue, dispatchValue}}>
+        <Routes />
+      </DataContext.Provider>
+    </div>
+  )
+}
 
 
-    return(
-      <div className="App">
-    {/* ---------------------------------- client routes ------------------------------------- */}
-        <Router>
-          <Switch >
-            <Route path="/" exact component={()=> <Home actions={ACTIONS} logOn={LogOn} createUser={CreateUser}/>}/>
-            <Route path="/news" component={()=> <News/>}/>
-            <Route path="/previews" component={()=> <Previews/>}/>
-            <Route path="/lookbooks" component={()=> <LookBooks/>}/>
-            <Route path="/shop" exact component={()=> <Shop/>} />
-            {/* <Route path="/shop/:id" exact component={Product}/> */}
-            <Route path="/cart" component={()=> <Cart/>} />
-            <Route path="/checkout" component={()=> <Checkout/>}/>
-            <Route path="/random" component={()=> <Random/>}/>
-            <Route path="/about" component={()=> <About/>}/>
-            <Route path="/stores" component={()=> <Stores/>} />
-            <Route path="/contact" component={()=> <Contact/>} />
-            <Route path="/mailinglist" component={()=> <MailingList/>}/>
-          </Switch>
-        </Router>
-      </div>
-    )
-  
+
+const Routes =()=>{
+  return(
+    <Fragment>
+      <Router>
+        <Switch >
+          <Route path="/" exact component={()=> <Home />}/>
+          <Route path="/news" component={()=> <News/>}/>
+          <Route path="/previews" component={()=> <Previews/>}/>
+          <Route path="/lookbooks" component={()=> <LookBooks/>}/>
+          <Route path="/shop" exact component={()=> <Shop/>} />
+          <Route path="/cart" component={()=> <Cart/>} />
+          <Route path="/checkout" component={()=> <Checkout/>}/>
+          <Route path="/random" component={()=> <Random/>}/>
+          <Route path="/about" component={()=> <About/>}/>
+          <Route path="/stores" component={()=> <Stores/>} />
+          <Route path="/contact" component={()=> <Contact/>} />
+          <Route path="/mailinglist" component={()=> <MailingList/>}/>
+        </Switch>
+      </Router>
+    </Fragment>
+  )
 }
 
 export default App;

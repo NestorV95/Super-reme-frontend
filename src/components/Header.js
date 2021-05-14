@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import SignInButton from './SignIn/SignInButton'
+import SignButton from './SignIn/SignButton'
 import SignContainer from './SignIn/SignContainer'
 import '../styles/Header.css'
 
-const Header = ({logOn, createUser}) => {
+const Header = () => {
     const [siForm,setSiForm] = useState(false)
 
     const showSignIn=()=>{
@@ -14,9 +14,9 @@ const Header = ({logOn, createUser}) => {
         <ul className="hdr">
             <li className="hdr-li">
                 { siForm === false ? 
-                    <SignInButton signIn={showSignIn}/> 
+                    <SignButton signIn={showSignIn}/> 
                     : 
-                    <SignContainer logOn={logOn} createUser={createUser}/>
+                    <SignContainer />
                 }
             </li>
         </ul>
