@@ -4,12 +4,11 @@ import React from "react";
 import BottomNav from "../components/BottomNav";
 import LogoCdt from "../components/Logo";
 //----------------------------------------- styles -----------------------------------------------//
-
+import '../styles/MailingList.css'
 //------------------------------------- Mailing List page ----------------------------------------//
 const MailingList=()=>{
     return(
-        <div>
-            <h1>MailingList Page</h1>
+        <div className="mailing-page">
             <LogoCdt/>
             <MailingListForm/>
             <BottomNav/>
@@ -28,9 +27,7 @@ const MailingListForm=()=>{
                     <span>app.</span>
                 </p> 
             </div>
-            <div className="eti-div">
-                <input type="text" name="email" placeholder="address@email.com"/>
-            </div>
+                <input className="eti" type="text" name="email" placeholder="address@email.com"/>
             <div className="lri-div">
                 <label>english<input type="radio"></input></label><br/>
                 <label>spanish<input type="radio"></input></label><br/>
@@ -42,17 +39,9 @@ const MailingListForm=()=>{
                     <span>say if it were real. </span><br/>
                 </p>
             </div>
-            <div className="cb-div">
-                <input type="checkbox"></input>
-            </div>
-            <div>
-                <div>
-                    <button>subscribe</button>
-                </div>
-                <div>
-                    <button>unsubscribe</button>
-                </div>
-            </div>
+            <input className="cb-div"type="checkbox"></input>
+            <button className="sub">subscribe</button>
+            <button className="unsub">unsubscribe</button>
         </div>
     )
 }
