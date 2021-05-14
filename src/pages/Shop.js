@@ -1,5 +1,5 @@
 //----------------------------------------- packages ---------------------------------------------//
-import React,{useState,useEffect, useContext} from "react";
+import React,{useState, useContext} from "react";
 //---------------------------------------- components --------------------------------------------//
 import useFetch from '../helpers/useFetch'
 import BottomNav from "../components/BottomNav";
