@@ -28,18 +28,14 @@ const SignInForm = ({toggle}) =>{
 
     return(
         <div className="si-content">
-                <div className="si-usr">
-                    <label>Username</label>
-                    <input type="text" value={usrnm} onChange={(e)=>setUsrnm(e.target.value)} placeholder="username" />
-                </div>
-                <div className="si-pwd">
-                    <label>Password</label>
-                    <input type="password"value={pwd} onChange={(e)=>setPwd(e.target.value)} placeholder="password"/> 
-                </div>
-                <div >
-                    <button className="su-btn" onClick={()=>togEm()}>Sign Up</button> 
-                    <button className="si-btn" onClick={()=>logOn()}> Sign In</button>  
-                </div>
+            <p className="si-tt">welcome back</p>
+            <input className="si-usr" type="text" value={usrnm} onChange={(e)=>setUsrnm(e.target.value)} placeholder="username" />
+            <input className="si-pwd" type="password"value={pwd} onChange={(e)=>setPwd(e.target.value)} placeholder="password"/> 
+            <div>
+                <button className="si-su" onClick={()=>togEm()}>Sign Up</button> 
+                <button className="si-btn" onClick={()=>logOn()}> Sign In</button>  
+            </div>
+           
         </div>
     )
 }

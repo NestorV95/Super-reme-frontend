@@ -3,6 +3,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 

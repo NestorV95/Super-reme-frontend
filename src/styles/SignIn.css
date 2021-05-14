@@ -1,8 +1,9 @@
 .hdr-si{
-    display: inline-block;
+    display: fixed;
     text-align: center;
     height: 2rem;
     width: 5rem;
+    right: 3rem;
     text-decoration: none;
     font-weight: 500;
     background:transparent;
@@ -18,4 +19,100 @@
 .hdr-si:hover{
     background:rgba(255, 0, 0,.10);
     color: white;
+}
+
+.si-content{
+    position:  fixed;
+    display: block;
+    margin:0;
+    padding: 0;
+    height: 15rem;
+    width: 15rem;
+    right: 10vw;
+    top: 10vh;
+    background: rgba(255, 0, 0,.11);
+    border-radius: .15rem;
+}
+
+.si-tt{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.si-usr{
+    position:  absolute;
+    display: block;
+    left: 2.25rem;
+    top:4rem;
+    border: none;
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    border-radius: .15rem;
+
+}
+
+.si-pwd{
+    position:  absolute;
+    display: block;
+    left: 2.25rem;
+    top: 7rem;
+   
+    background-color: transparent;
+    border: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: .15rem;
+}
+
+.si-su{
+    position:  absolute;
+    display: block;
+    left: 2.25rem;
+    top: 10rem;
+    height: 2rem;
+    width: 5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    background:transparent;
+    border: transparent;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    padding:auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .90rem;
+}
+
+.si-su:hover{
+    background:rgba(255, 255, 255, 0.1);
+    color: rgb(255, 0, 0);
+}
+
+.si-btn{
+    position:  absolute;
+    display: block;
+    left: 7rem;
+    top: 10rem;
+    height: 2rem;
+    width: 5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    background:transparent;
+    border: transparent;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    padding:auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: .90rem;
+}
+
+.si-btn:hover{
+    background:rgba(255, 255, 255, 0.1);
+    color: rgb(255, 0, 0);
 }
