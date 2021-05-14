@@ -52,10 +52,7 @@ const HomeNav = () => {
     <div className="home-menu">
       <ul className="hn-ul">
         <li className="hn-li"> <Link className="hn-a" to="/news">News</Link> </li>
-        <li className="hn-li"> <Link className="hn-a" to="/previews">Preview</Link> </li>
-        <li className="hn-li"> <Link className="hn-a" to="/lookbooks">Lookbook</Link> </li>
         <li className="hn-li"> <Link className="hn-a" to="/shop">Shop</Link> </li>
-        <li className="hn-li"> <Link className="hn-a" to="/random">Random</Link> </li>
         <li className="hn-li"> <Link className="hn-a" to="/about">About</Link> </li>
         <li className="hn-li"> <Link className="hn-a" to="/stores">Stores</Link> </li>
         <li className="hn-li"> <Link className="hn-a" to="/contact">Contact</Link> </li>

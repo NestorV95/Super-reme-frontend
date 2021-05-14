@@ -18,8 +18,7 @@ const About=()=>{
                 <p className="abt-p">Over at Super-reme, we have developed our stores and merchandise
                      to embody scooter culture.</p> 
                 <p className="abt-p">We don't discriminate on what type of scooter you have, whether
-                     it be manual, electric,</p>
-                <p className="abt-p">motorized, every scooter type is welcome at Super-reme.</p>
+                     it be manual, electric,motorized, every scooter type is welcome at Super-reme.</p>
                 <p className="abt-p">Come one down to or HTX store - you get two packs of Newport 
                     100s with every 5th purchase.</p>        
             </div>
