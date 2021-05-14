@@ -10,7 +10,6 @@ const Header = () => {
     const showSignIn=()=>{
         setSiForm(true)
     }
-    console.log(currUserValue, loggedInValue)
     return (
         <ul className="hdr">
             <li className="hdr-li">
